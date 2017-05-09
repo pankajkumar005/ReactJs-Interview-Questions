@@ -10,7 +10,7 @@ ReactJs Interview Questions
 > - The changed objects, and the changed objects only, get updated on the real DOM.
 > - Changes on the real DOM cause the screen to change.
 2. **Why can't we call** *this.setState* **from render function of React Component?**
-> Answer Coming Soon...
+> *this.setState* updates the state of the component and since the component state is updated, it calls render method on its own. So, if we call *this.setState* from render method there will be infinite loop.
 3. **What do you mean by Automatic Binding of context in React?**
 > Answer Coming Soon...
 4. **What is Stateless Functional Component and how do we define them?**
