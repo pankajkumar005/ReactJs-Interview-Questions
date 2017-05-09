@@ -74,5 +74,5 @@ in inputChanged refers to Parent component.
         name: React.PropTypes.string
     };
     
-Contd...
+#### Contd... ####
 
