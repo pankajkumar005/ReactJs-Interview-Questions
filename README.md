@@ -1,4 +1,4 @@
-# ReactJs-Interview-Questions
+# ReactJs Interview Questions
 ReactJs Interview Questions
 
 1. **What is Virtual DOM? List down the steps on how does React Handle change to the DOM?**
@@ -73,3 +73,6 @@ in inputChanged refers to Parent component.
     Child.propTypes = {
         name: React.PropTypes.string
     };
+    
+Contd...
+
