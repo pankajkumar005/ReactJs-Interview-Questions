@@ -49,4 +49,27 @@ in inputChanged refers to Parent component.
 
 > When a component class has nothing else but only render function and returns JSX then stateless functional component can be used. The props parameter passed to the function is equivalent to {this.props}.
 5. **What are propTypes and how do we define propTypes for Stateless Functional Component?**
-> Answer Coming Soon...
+> If a component class expects the prop to be passed from parent component then propTypes is to be used. It helps in mainly in two purposes:
+
+> - Validation w.r.t. datatype, required etc
+> - Documenting the expected properties.
+
+> propTypes in components:
+
+    var Child = React.createClass({
+        propTypes: {
+            name: React.PropTypes.string
+        },
+        render: function() {
+            return <div>{this.props.name}</div>
+        }
+    })
+
+> propTypes in stateless functional component should be provided as direct function properties:
+
+    function Child(props){
+        return <div>{this.props.name}</div>
+    }
+    Child.propTypes = {
+        name: React.PropTypes.string
+    };
