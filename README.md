@@ -12,7 +12,28 @@ ReactJs Interview Questions
 2. **Why can't we call** *this.setState* **from render function of React Component?**
 > *this.setState* updates the state of the component and since the component state is updated, it calls render method on its own. So, if we call *this.setState* from render method there will be infinite loop.
 3. **What do you mean by Automatic Binding of context in React?**
-> Answer Coming Soon...
+> Automatic binding allows you to pass functions as props, and any *this* values in the functions' bodies will automatically refer to whatever they referred to when the function was defined. Consider following code example:
+
+    var Parent = React.createClass({
+        inputChanged: function() {
+            //do something using context this
+        },
+        render: function() {
+            return <Child onChange={this.inputChanged}>
+        }
+    })
+
+    var Child = React.createClass({
+        render: function() {
+            return <input onChange={this.props.onChange}>
+        }
+    });
+    
+> When input changes in Child component, inputChanged function of Parent component is called. 
+Considering dynamic context binding in Javascript, inputChanged must have *this* referring to Child component,
+but because of automatic binding by ReactJS, the context refers to where the function is defined hence *this* 
+in inputChanged refers to Parent component.
+
 4. **What is Stateless Functional Component and how do we define them?**
 > Answer Coming Soon...
 5. **What are propTypes and how do we define propTypes for Stateless Functional Component?**
