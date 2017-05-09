@@ -35,6 +35,18 @@ but because of automatic binding by ReactJS, the context refers to where the fun
 in inputChanged refers to Parent component.
 
 4. **What is Stateless Functional Component and how do we define them?**
-> Answer Coming Soon...
+> Component written directly as function is called stateless functional component. e.g.
+
+    function Card(props) {
+        return (
+            <div>
+                <div>{props.name}</div>
+                <div>{props.email}</div>
+                <div>{props.phone}</div>
+            </div>
+        )
+    } 
+
+> When a component class has nothing else but only render function and returns JSX then stateless functional component can be used. The props parameter passed to the function is equivalent to {this.props}.
 5. **What are propTypes and how do we define propTypes for Stateless Functional Component?**
 > Answer Coming Soon...
